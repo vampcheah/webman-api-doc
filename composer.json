@@ -1,19 +1,20 @@
 {
-  "name": "xianrenqh/api-doc-webman",
+  "name": "vampcheah/webman-api-doc",
   "type": "library",
   "license": "MIT",
-  "description": "Webman plugin xianrenqh/api-doc-webman",
+  "description": "Webman plugin vampcheah/webman-api-doc",
   "authors"    : [
     {
-      "name" : "xiaohuihui",
-      "email": "762229008@qq.com"
+      "name" : "francisXB",,
+      "email": "vampcheah@gmail.com"
+      "telegram": "francischeah"
     }
   ],
   "require": {
   },
   "autoload": {
     "psr-4": {
-      "xianrenqh\\ApiDocWebman\\": "src"
+      "vampcheah\\ApiDocWebman\\": "src"
     }
   }
 }
