@@ -3,15 +3,13 @@
   "type": "library",
   "license": "MIT",
   "description": "Webman plugin vampcheah/webman-api-doc",
-  "authors"    : [
+  "authors": [
     {
-      "name" : "francisXB",,
+      "name": "francisXB",
       "email": "vampcheah@gmail.com"
-      "telegram": "francischeah"
     }
   ],
-  "require": {
-  },
+  "require": {},
   "autoload": {
     "psr-4": {
       "vampcheah\\ApiDocWebman\\": "src"
