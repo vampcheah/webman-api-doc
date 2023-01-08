@@ -75,8 +75,11 @@ class ApiDoc
     foreach ($this->class as $classItem) {
       $actionInfo = $this->_getActionComment($classItem, $type);
       if (count($actionInfo) >= 1) {
-        $this->ApiTree[$classItem] = $this->_getClassComment($classItem);
-        $this->ApiTree[$classItem]["action"] = $actionInfo;
+        foreach ($actionInfo as $_action) {
+          $headMenu = $this->_getClassComment($classItem);
+          $newMenu = ["main" => $headMenu, ...$_action];
+          $this->ApiTree[$headMenu["title"]][] = $newMenu;
+        }
       }
     }
 

@@ -480,14 +480,10 @@ EXT;
    */
   private function _getClassItem($className, $classItem)
   {
-    $title = Tools::getSubValue("title", $classItem, "未命名");
+    $title = $className;
     $actionHtml = "";
-    if (
-      isset($classItem["action"]) &&
-      is_array($classItem["action"]) &&
-      count($classItem["action"]) >= 1
-    ) {
-      foreach ($classItem["action"] as $actionName => $actionItem) {
+    if (isset($classItem) && is_array($classItem) && count($classItem) >= 1) {
+      foreach ($classItem as $actionName => $actionItem) {
         $actionHtml .= $this->_getActionItem(
           $className,
           $actionName,
@@ -538,17 +534,16 @@ EXT;
   {
     $html = '<ul class="navbar-nav" id="navbar-nav-top-nav">';
     foreach ($data as $className => $classItem) {
-      $title = Tools::getSubValue("title", $classItem, "未命名");
       $html .= '<li class="nav-item dropdown">';
       $html .=
         '<a class="nav-link dropdown-toggle" href="#" id="' .
         $className .
         '-nav" data-toggle="dropdown">' .
-        $title .
+        $className .
         "</a>";
       $html .=
         '<div class="dropdown-menu" aria-labelledby="' . $className . '-nav">';
-      foreach ($classItem["action"] as $actionName => $actionItem) {
+      foreach ($classItem as $actionName => $actionItem) {
         $title = Tools::getSubValue("title", $actionItem, "未命名");
         $id = $className . "_" . $actionName;
         $html .=
