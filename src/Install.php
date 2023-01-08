@@ -1,74 +1,74 @@
 <?php
-namespace Xianrenqh\ApiDocWebman;
+namespace vampcheah\ApiDocWebman;
 
 class Install
 {
-    const WEBMAN_PLUGIN = true;
+  const WEBMAN_PLUGIN = true;
 
-    /**
-     * @var array
-     */
-    protected static $pathRelation = array (
-  'config/plugin/xianrenqh/api-doc-webman' => 'config/plugin/xianrenqh/api-doc-webman',
-);
+  /**
+   * @var array
+   */
+  protected static $pathRelation = [
+    "config/plugin/vampcheah/api-doc-webman" =>
+      "config/plugin/vampcheah/api-doc-webman",
+  ];
 
-    /**
-     * Install
-     * @return void
-     */
-    public static function install()
-    {
-        static::installByRelation();
-    }
+  /**
+   * Install
+   * @return void
+   */
+  public static function install()
+  {
+    static::installByRelation();
+  }
 
-    /**
-     * Uninstall
-     * @return void
-     */
-    public static function uninstall()
-    {
-        self::uninstallByRelation();
-    }
+  /**
+   * Uninstall
+   * @return void
+   */
+  public static function uninstall()
+  {
+    self::uninstallByRelation();
+  }
 
-    /**
-     * installByRelation
-     * @return void
-     */
-    public static function installByRelation()
-    {
-        foreach (static::$pathRelation as $source => $dest) {
-            if ($pos = strrpos($dest, '/')) {
-                $parent_dir = base_path().'/'.substr($dest, 0, $pos);
-                if (!is_dir($parent_dir)) {
-                    mkdir($parent_dir, 0777, true);
-                }
-            }
-            //symlink(__DIR__ . "/$source", base_path()."/$dest");
-            copy_dir(__DIR__ . "/$source", base_path()."/$dest");
-            echo "Create $dest
-";
+  /**
+   * installByRelation
+   * @return void
+   */
+  public static function installByRelation()
+  {
+    foreach (static::$pathRelation as $source => $dest) {
+      if ($pos = strrpos($dest, "/")) {
+        $parent_dir = base_path() . "/" . substr($dest, 0, $pos);
+        if (!is_dir($parent_dir)) {
+          mkdir($parent_dir, 0777, true);
         }
-    }
-
-    /**
-     * uninstallByRelation
-     * @return void
-     */
-    public static function uninstallByRelation()
-    {
-        foreach (static::$pathRelation as $source => $dest) {
-            $path = base_path()."/$dest";
-            if (!is_dir($path) && !is_file($path)) {
-                continue;
-            }
-            echo "Remove $dest
+      }
+      //symlink(__DIR__ . "/$source", base_path()."/$dest");
+      copy_dir(__DIR__ . "/$source", base_path() . "/$dest");
+      echo "Create $dest
 ";
-            if (is_file($path) || is_link($path)) {
-                unlink($path);
-                continue;
-            }
-            remove_dir($path);
-        }
     }
-    
+  }
+
+  /**
+   * uninstallByRelation
+   * @return void
+   */
+  public static function uninstallByRelation()
+  {
+    foreach (static::$pathRelation as $source => $dest) {
+      $path = base_path() . "/$dest";
+      if (!is_dir($path) && !is_file($path)) {
+        continue;
+      }
+      echo "Remove $dest
+";
+      if (is_file($path) || is_link($path)) {
+        unlink($path);
+        continue;
+      }
+      remove_dir($path);
+    }
+  }
 }

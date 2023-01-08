@@ -7,20 +7,18 @@
  * Info:
  */
 
-namespace xianrenqh\ApiDocWebman;
+namespace vampcheah\ApiDocWebman;
 
-use xianrenqh\ApiDocWebman\ApiDoc;
-use xianrenqh\ApiDocWebman\BootstrapApiDoc;
+use vampcheah\ApiDocWebman\ApiDoc;
+use vampcheah\ApiDocWebman\BootstrapApiDoc;
 
 class Index
 {
+  public function index()
+  {
+    $api = new BootstrapApiDoc();
+    $doc = $api->getHtml();
 
-    public function index()
-    {
-        $api = new BootstrapApiDoc();
-        $doc = $api->getHtml();
-
-        return $doc;
-    }
-
+    return $doc;
+  }
 }
