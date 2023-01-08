@@ -14,5 +14,6 @@
     "psr-4": {
       "vampcheah\\ApiDocWebman\\": "src"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
