@@ -2,17 +2,22 @@
 
 webman开发框架可用的 简单的api-doc 文档
 【注解】
+#说明： 此代码来自源码，开源git地址：
+```
+https://github.com/itxq/api-doc-php
+https://github.com/xianrenqh/api-doc-php
+```
 
 ## 安装
 
-> composer require xianrenqh/api-doc-webman
+> composer require vampcheah/webman-api-doc
 
 ## 使用
 
 ### 配置设置：
 
 1. 基本配置
-   路径：\config\plugin\xianrenqh\api-doc-webman\app.php
+   路径：\config\plugin\francis\api-doc-webman\app.php
 
 可以设置基本信息。
 > 重要：
@@ -21,7 +26,7 @@ webman开发框架可用的 简单的api-doc 文档
 >
 
 2. 路由配置
-   路径：\config\plugin\xianrenqh\api-doc-webman\route.php
+   路径：\config\plugin\francis\api-doc-webman\route.php
 
 路由设置里目前有两个路由：
 
