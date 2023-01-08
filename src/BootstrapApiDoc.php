@@ -447,7 +447,7 @@ EXT;
                     <p>请求方式：
                         <span class="btn btn-info btn-sm">{$actionItem["method"]}</span>
                     </p>
-                    <p>请求地址：<a href="{$actionItem["url"]}">{$actionItem["url"]}</a></p>
+                    <p>请求地址：<a href="{$actionItem["url"]}" target="_blank" rel="noreferrer">{$actionItem["url"]}</a></p>
                     {$this->_getHeaderData(
       Tools::getSubValue("header", $actionItem, [])
     )}
