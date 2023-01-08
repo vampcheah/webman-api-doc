@@ -10,6 +10,8 @@ https://github.com/itxq/api-doc-php
 https://github.com/xianrenqh/api-doc-php
 ```
 
+#说明： 此代码已经过部分修改，可能对于原来的效果及某些结构布局有不一样的结果。
+
 ## 安装
 
 > composer require vampcheah/webman-api-doc
