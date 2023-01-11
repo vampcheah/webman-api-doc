@@ -242,6 +242,25 @@ EXT;
   }
 
   /**
+   * 解析authentication并生成HTML
+   *
+   * @param array $data
+   * @param string $index
+   *
+   * @return string
+   */
+  private function _getLineAuth($data, $index)
+  {
+    $html = "";
+    if (!isset($data[$index])) {
+      return $html;
+    }
+    $html .= "<p>用户验证：<span class=\"btn btn-danger btn-sm\">{$data[$index]}</span></p>";
+
+    return $html;
+  }
+
+  /**
    * 解析param 并生成HTML
    *
    * @param array $data
@@ -447,6 +466,7 @@ EXT;
                     <p>请求方式：
                         <span class="btn btn-info btn-sm">{$actionItem["method"]}</span>
                     </p>
+                    {$this->_getLineAuth($actionItem, "authentication")}
                     <p>请求地址：<a href="{$actionItem["url"]}" target="_blank" rel="noreferrer">{$actionItem["url"]}</a></p>
                     {$this->_getHeaderData(
       Tools::getSubValue("header", $actionItem, [])
